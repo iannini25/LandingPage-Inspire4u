@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm create:*)",
+      "Bash(cp:*)",
+      "Bash(pnpm add:*)",
+      "Bash(pnpm:*)",
+      "Bash(CI=true pnpm install:*)",
+      "Bash(CI=true pnpm add:*)",
+      "Bash(\"c:/Users/berna/Desktop/website-i4u/app/layout.tsx\":*)",
+      "Bash(\"c:/Users/berna/Desktop/website-i4u/app/page.tsx\":*)",
+      "Bash(CI=true pnpm build:*)",
+      "Bash(taskkill:*)",
+      "Bash(cmd:*)",
+      "Bash(node:*)",
+      "Bash(npx next:*)"
+    ]
+  }
+}
