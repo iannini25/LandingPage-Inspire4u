@@ -400,7 +400,7 @@ function GlassCard({
         boxShadow: tagColor === "amber" ? "0 0 14px rgba(212,144,10,0.18)" : "0 0 14px rgba(107,16,184,0.25)",
         transition: "all 0.3s",
       }}>
-        {icon}
+        {icon || tag.charAt(0)}
       </div>
 
       <div style={{ flex: 1 }}>
@@ -494,11 +494,11 @@ function LedgerRow({
       />
       <span
         style={{
-          fontFamily: "var(--font-display)",
-          fontSize: "0.625rem",
-          fontWeight: 700,
+          fontFamily: "var(--font-body)",
+          fontSize: "0.6875rem",
+          fontWeight: 500,
           color: hovered ? "var(--v5)" : "var(--t4)",
-          letterSpacing: "0.12em",
+          letterSpacing: "0.08em",
           transition: "color 0.3s",
           zIndex: 1,
           fontVariantNumeric: "tabular-nums",
@@ -511,8 +511,8 @@ function LedgerRow({
           {icon && <span style={{ fontSize: "1rem" }}>{icon}</span>}
           <h3
             style={{
-              fontFamily: "var(--font-display)",
-              fontWeight: 700,
+              fontFamily: "var(--font-body)",
+              fontWeight: 600,
               fontSize: "0.9375rem",
               color: hovered ? "var(--t0)" : "var(--t1)",
               letterSpacing: "-0.01em",
@@ -1758,16 +1758,15 @@ function MarqueeSection() {
 /* ─── VOCAÇÃO ────────────────────────────────────────────────────────── */
 function VocacaoSection() {
   const rows = [
-    { number: "01", icon: "⚖️", title: "Governança Estratégica", desc: "Estruturamos conselhos e comitês alinhados às melhores práticas internacionais, adaptadas à realidade da fintech brasileira." },
-    { number: "02", icon: "🛡️", title: "Compliance & Regulatório", desc: "Navegamos o ecossistema regulatório do Banco Central, CVM e BACEN com expertise e eficiência." },
-    { number: "03", icon: "🌱", title: "Cultura Organizacional", desc: "Transformamos governança em cultura — onde cada colaborador é agente ativo da conformidade e ética." },
-    { number: "04", icon: "📊", title: "Gestão de Riscos", desc: "Framework proprietário Athena7 para identificação, mensuração e mitigação de riscos corporativos." },
-    { number: "05", icon: "🌐", title: "Expansão Internacional", desc: "Suporte especializado para fintechs com operações ou planos de expansão para o mercado europeu." },
-    { number: "06", icon: "🤝", title: "Advisory Board", desc: "Construção e curadoria de conselhos consultivos com perfis complementares e rede de conexões estratégicas." },
+    { number: "01", title: "Governança Estratégica", desc: "Estruturamos conselhos e comitês alinhados às melhores práticas internacionais, adaptadas à realidade da fintech brasileira." },
+    { number: "02", title: "Compliance & Regulatório", desc: "Navegamos o ecossistema regulatório do Banco Central, CVM e BACEN com expertise e eficiência." },
+    { number: "03", title: "Cultura Organizacional", desc: "Transformamos governança em cultura — onde cada colaborador é agente ativo da conformidade e ética." },
+    { number: "04", title: "Gestão de Riscos", desc: "Framework proprietário Athena7 para identificação, mensuração e mitigação de riscos corporativos." },
+    { number: "05", title: "Expansão Internacional", desc: "Suporte especializado para fintechs com operações ou planos de expansão para o mercado europeu." },
+    { number: "06", title: "Advisory Board", desc: "Construção e curadoria de conselhos consultivos com perfis complementares e rede de conexões estratégicas." },
   ]
   return (
     <section id="vocacao" style={{ position: "relative", padding: "7rem 1.5rem 7rem 3rem", overflow: "hidden" }}>
-      <SectionNumber n="01" />
       <VerticalLabel text="Nossa Vocação" />
       <div style={{ position: "relative", zIndex: 1, maxWidth: "72rem", margin: "0 auto" }}>
         <div data-reveal style={{ marginBottom: "1rem" }}>
@@ -1798,22 +1797,21 @@ function VocacaoSection() {
 /* ─── ATHENA7 ────────────────────────────────────────────────────────── */
 function Athena7Section() {
   const cells: { icon: string; tag: string; tagColor: "violet" | "amber"; title: string; desc: string; wide?: boolean }[] = [
-    { icon: "🏛️", tag: "Fundação", tagColor: "violet", title: "Propósito & Valores", desc: "Fundação ética e propósito claro que guiam todas as decisões organizacionais. A espinha dorsal da governança duradoura.", wide: true },
-    { icon: "⚙️", tag: "Estrutura", tagColor: "violet", title: "Estrutura & Papéis", desc: "Definição cristalina de responsabilidades, autoridade e fluxos de decisão." },
-    { icon: "🔐", tag: "Controles", tagColor: "amber", title: "Processos & Controles", desc: "Sistemas robustos que garantem conformidade sem engessar a inovação." },
-    { icon: "📊", tag: "Dados", tagColor: "amber", title: "Transparência & Dados", desc: "Relatórios e dashboards que transformam governança em inteligência de negócio. Visibilidade total para decisões certeiras.", wide: true },
-    { icon: "🌱", tag: "Cultura", tagColor: "violet", title: "Cultura & Engajamento", desc: "Programas que tornam compliance parte do DNA organizacional." },
-    { icon: "⚠️", tag: "Riscos", tagColor: "amber", title: "Risco & Resiliência", desc: "Identificação proativa e gestão dinâmica de riscos estratégicos e operacionais." },
-    { icon: "🚀", tag: "Evolução", tagColor: "violet", title: "Inovação & Evolução", desc: "Governança adaptativa que cresce com a organização e antecipa mudanças regulatórias. O futuro já tem estrutura.", wide: true },
+    { icon: "", tag: "Fundação", tagColor: "violet", title: "Propósito & Valores", desc: "Fundação ética e propósito claro que guiam todas as decisões organizacionais. A espinha dorsal da governança duradoura.", wide: true },
+    { icon: "", tag: "Estrutura", tagColor: "violet", title: "Estrutura & Papéis", desc: "Definição cristalina de responsabilidades, autoridade e fluxos de decisão." },
+    { icon: "", tag: "Controles", tagColor: "amber", title: "Processos & Controles", desc: "Sistemas robustos que garantem conformidade sem engessar a inovação." },
+    { icon: "", tag: "Dados", tagColor: "amber", title: "Transparência & Dados", desc: "Relatórios e dashboards que transformam governança em inteligência de negócio. Visibilidade total para decisões certeiras.", wide: true },
+    { icon: "", tag: "Cultura", tagColor: "violet", title: "Cultura & Engajamento", desc: "Programas que tornam compliance parte do DNA organizacional." },
+    { icon: "", tag: "Riscos", tagColor: "amber", title: "Risco & Resiliência", desc: "Identificação proativa e gestão dinâmica de riscos estratégicos e operacionais." },
+    { icon: "", tag: "Evolução", tagColor: "violet", title: "Inovação & Evolução", desc: "Governança adaptativa que cresce com a organização e antecipa mudanças regulatórias. O futuro já tem estrutura.", wide: true },
   ]
 
   return (
     <section id="athena7" style={{ position: "relative", padding: "7rem 1.5rem 7rem 3rem", background: "linear-gradient(180deg, transparent 0%, var(--bg2) 30%, var(--bg2) 70%, transparent 100%)", overflow: "hidden" }}>
-      <SectionNumber n="02" />
       <VerticalLabel text="Athena7" />
       <div style={{ position: "relative", zIndex: 1, maxWidth: "72rem", margin: "0 auto" }}>
         <div data-reveal style={{ marginBottom: "1rem" }}>
-          <span style={S.eyebrowAmber}>Framework Proprietário</span>
+          <span style={S.eyebrowAmber}>Athena7</span>
         </div>
         <StaircaseHeadline
           lines={["Coragem para falar.", "Segurança para escutar."]}
@@ -1825,6 +1823,7 @@ function Athena7Section() {
         </p>
 
         <div
+          className="athena-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
@@ -1947,7 +1946,6 @@ function GlobeCanvas() {
 function BridgeSection() {
   return (
     <section id="conexoes" style={{ position: "relative", padding: "7rem 1.5rem 7rem 3rem", overflow: "hidden" }}>
-      <SectionNumber n="03" />
       <VerticalLabel text="Presença Global" />
       <div style={{ position: "relative", zIndex: 1, maxWidth: "72rem", margin: "0 auto" }}>
         <div data-reveal style={{ marginBottom: "1rem" }}>
@@ -1962,15 +1960,15 @@ function BridgeSection() {
           O futuro das finanças é colaborativo e sem fronteiras. A Inspire4U é o elo estratégico entre o ecossistema de fintechs do Brasil e da Irlanda, dois polos de inovação pulsantes. Fomentamos parcerias, promovemos pesquisas e abrimos portas para negócios que nascem da troca de conhecimento e da visão compartilhada de um mercado financeiro mais conectado e eficiente.
         </p>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
+        <div className="bridge-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
           <div data-reveal style={{ display: "flex", justifyContent: "center" }}>
             <GlobeCanvas />
           </div>
 
           <div data-reveal data-delay="150">
             {[
-              { flag: "🇧🇷", city: "São Paulo", country: "Brasil", desc: "Hub para o mercado brasileiro e América Latina. Centro de inovação e regulatório BACEN.", color: "var(--v5)" },
-              { flag: "🇮🇪", city: "Dublin", country: "Irlanda", desc: "Gateway para o ecossistema europeu e regulatório EU. Acesso direto ao mercado do Atlântico Norte.", color: "var(--cyan)" },
+              { flag: "BR", city: "São Paulo", country: "Brasil", desc: "Hub para o mercado brasileiro e América Latina. Centro de inovação e regulatório BACEN.", color: "var(--v5)" },
+              { flag: "IE", city: "Dublin", country: "Irlanda", desc: "Gateway para o ecossistema europeu e regulatório EU. Acesso direto ao mercado do Atlântico Norte.", color: "var(--cyan)" },
             ].map(card => (
               <div
                 key={card.city}
@@ -2050,13 +2048,15 @@ function ContactSection() {
         >
           {sent ? (
             <div style={{ textAlign: "center", padding: "2rem 0" }}>
-              <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>✅</div>
+              <div style={{ fontSize: "1.5rem", marginBottom: "1rem", color: "var(--v5)" }} aria-hidden="true">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
+              </div>
               <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", fontWeight: 700, color: "var(--t0)", marginBottom: "0.75rem" }}>Mensagem Enviada!</h3>
               <p style={{ fontFamily: "var(--font-body)", color: "var(--t2)", lineHeight: 1.6 }}>Entraremos em contato em até 24 horas úteis.</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1.25rem" }}>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.25rem" }}>
+              <div className="form-row" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.25rem" }}>
                 <FloatField label="Nome" required />
                 <FloatField label="Empresa" required />
               </div>
@@ -2139,7 +2139,6 @@ function InvestorsSection() {
   ]
   return (
     <section id="investidores" style={{ position: "relative", padding: "7rem 1.5rem 7rem 3rem", overflow: "hidden" }}>
-      <SectionNumber n="04" />
       <VerticalLabel text="Investidores" />
       <div style={{ position: "relative", zIndex: 1, maxWidth: "72rem", margin: "0 auto" }}>
         <div data-reveal style={{ marginBottom: "1rem" }}>
@@ -2154,7 +2153,7 @@ function InvestorsSection() {
           A Inspire4U não está apenas prestando consultoria; estamos construindo um ecossistema. Um ecossistema baseado em governança sólida, inovação sem fronteiras e ambientes de trabalho mais justos. Buscamos investidores e empresas parceiras que não apenas procurem um retorno financeiro, mas que queiram liderar a transformação no mercado de fintechs. Se você acredita em crescimento com propósito, seu lugar é aqui.
         </p>
 
-        <div data-reveal style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "0", borderTop: "1px solid var(--b1)", borderBottom: "1px solid var(--b1)", marginBottom: "3rem", padding: "2rem 0" }}>
+        <div data-reveal className="stats-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: "0", borderTop: "1px solid var(--b1)", borderBottom: "1px solid var(--b1)", marginBottom: "3rem", padding: "2rem 0" }}>
           {[
             { value: "R$ 280M+", label: "Pipeline de Projetos" },
             { value: "47", label: "Fintechs em Portfólio" },
@@ -2209,7 +2208,9 @@ function InvestorForm() {
   if (sent) {
     return (
       <div style={{ textAlign: "center", padding: "2rem 0" }}>
-        <div style={{ fontSize: "3rem", marginBottom: "1rem" }}>✅</div>
+        <div style={{ fontSize: "1.5rem", marginBottom: "1rem", color: "var(--v5)" }} aria-hidden="true">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" /><polyline points="22 4 12 14.01 9 11.01" /></svg>
+              </div>
         <h3 style={{ fontFamily: "var(--font-display)", fontSize: "1.5rem", fontWeight: 700, color: "var(--t0)", marginBottom: "0.75rem" }}>Interesse Enviado!</h3>
         <p style={{ fontFamily: "var(--font-body)", color: "var(--t2)", lineHeight: 1.6 }}>Nossa equipe entrará em contato em breve.</p>
       </div>
@@ -2381,7 +2382,7 @@ function Footer() {
       <div style={{ height: "1px", background: "linear-gradient(90deg, transparent, rgba(139,53,212,0.6) 30%, rgba(139,53,212,0.6) 70%, transparent)" }} />
       <div style={{ position: "absolute", bottom: 0, left: "50%", transform: "translateX(-50%)", width: "600px", height: "300px", background: "radial-gradient(ellipse at 50% 100%, rgba(75,0,130,0.15) 0%, transparent 70%)", pointerEvents: "none" }} aria-hidden="true" />
       <div style={{ position: "relative", zIndex: 1, maxWidth: "80rem", margin: "0 auto", padding: "3.5rem 1.5rem 2rem" }}>
-        <div style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: "2.5rem", marginBottom: "3rem" }}>
+        <div className="footer-grid" style={{ display: "grid", gridTemplateColumns: "2fr 1fr 1fr", gap: "2.5rem", marginBottom: "3rem" }}>
           <div>
             <Link href="/" style={{ display: "inline-block", marginBottom: "1rem", textDecoration: "none" }}>
               <Image
@@ -2459,11 +2460,117 @@ const pageCss = `
 .hdr-pill-sep { display: inline-flex; }
 .hdr-burger { display: none; }
 .vertical-label { display: block; }
+
+/* ── Tablet (max 860px) ── */
 @media (max-width: 860px) {
   .hdr-pill-nav { display: none !important; }
   .hdr-pill-sep { display: none !important; }
   .hdr-burger { display: flex !important; }
+
+  /* Sections: reduce padding */
+  #vocacao, #athena7, #conexoes, #investidores {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+
+  /* Bridge grid: stack */
+  #conexoes .bridge-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Athena7 cards grid: single column */
+  #athena7 .athena-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Investor stats: 2 cols */
+  #investidores .stats-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.5rem !important;
+  }
+  #investidores .stats-grid > div {
+    border-right: none !important;
+    border-bottom: 1px solid var(--b1);
+    padding-bottom: 1rem !important;
+  }
+
+  /* Footer grid: stack */
+  footer .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  /* Contact form fields: stack */
+  #contato .form-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Staircase headlines: remove indents on small screens */
+  .staircase-headline span {
+    padding-left: 0 !important;
+  }
 }
+
+/* ── Mobile (max 560px) ── */
+@media (max-width: 560px) {
+  /* Header */
+  header {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    height: 64px !important;
+  }
+
+  /* Hero */
+  #hero {
+    padding-top: 64px !important;
+  }
+  #hero h1 {
+    font-size: clamp(1.6rem, 7vw, 2.4rem) !important;
+  }
+
+  /* Sections padding */
+  #vocacao, #athena7, #conexoes, #investidores {
+    padding: 4rem 1rem !important;
+  }
+  #contato {
+    padding: 4rem 1rem !important;
+  }
+
+  /* Staircase headline smaller */
+  .staircase-headline span {
+    font-size: clamp(1.6rem, 8vw, 2.5rem) !important;
+    padding-left: 0 !important;
+  }
+
+  /* Ledger rows: simpler grid */
+  [data-ledger-row] {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+  [data-ledger-row] > span:first-child {
+    display: none !important;
+  }
+  [data-ledger-row] > span:last-child {
+    display: none !important;
+  }
+
+  /* Globe canvas smaller */
+  #conexoes canvas {
+    max-width: 280px !important;
+  }
+
+  /* Investor stats: single column */
+  #investidores .stats-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Footer */
+  footer {
+    padding: 2rem 1rem 1.5rem !important;
+  }
+}
+
 @media (max-width: 1199px) {
   .vertical-label { display: none !important; }
 }
@@ -2487,9 +2594,7 @@ export default function Page() {
       <Header />
       <main>
         <HeroSection />
-        <MarqueeSection />
         <VocacaoSection />
-        <BlackHoleSection />
         <Athena7Section />
         <BridgeSection />
         <ContactSection />
